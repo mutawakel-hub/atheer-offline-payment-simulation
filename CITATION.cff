@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software/artifact, please cite it."
+title: "Atheer Simulation Evaluation Artifact (Private APN Offline Payment)"
+type: software
+authors:
+  - family-names: "Al-Mutawakel"
+    given-names: "Ahmed Ali Mohammed Hasan"
+repository-code: "https://github.com/mutawakel-hub/atheer-offline-payment-simulation"
+url: "https://doi.org/10.5281/zenodo.19383900"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19383900
+    description: "Zenodo Concept DOI (resolves to the latest version)"
+version: "v3.0.0"
+date-released: "2026-09-13"
+license: "MIT"
+keywords:
+  - "discrete-event simulation"
+  - "SimPy"
+  - "Private APN"
+  - "offline-first"
+  - "payments"
+  - "Atheer"

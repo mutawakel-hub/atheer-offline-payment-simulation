@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets
+.env
+*.key
+
+# Output Artifacts (Uncomment if you want to push simulation results to Git)
+# outputs/
+
+# Temporary Drafts, Legacy Files & Tooling Scripts (Excluded from Git)
+_Private_Drafts_And_Tools/
+cleanup.py
+rename_inplace.py
+prepare_images.py
+
+# Ignore large output CSV files because Github max file size is 100MB
+outputs/atheer_simulation_results_*.csv

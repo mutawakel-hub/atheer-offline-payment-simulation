@@ -1,0 +1,82 @@
+meta:
+  paper: IDEASET-2026 (Submission 43, camera-ready)
+  section: VII
+  notes: 'S1/S2 unchanged from v1.2.0; S3 = Private APN with load-dependent degradation
+    enabled (alpha_L=0.75, lambda_th=25 TPS, beta=1.5, cap 35%) per paper Table V.
+    Loss model: additive (Eq. 3). Seeds deterministic (crc32).'
+experiment:
+  load_points_tps:
+  - 5
+  - 25
+  - 50
+  - 100
+  - 250
+  - 500
+  warmup_s: 5
+  measure_s: 60
+  num_runs: 10
+  base_seed: 20260211
+bank:
+  capacity: 50
+  service_time_s: 0.03
+  local_time_s: 0.05
+scenarios:
+- key: S1_PUBLIC
+  name: 'S1: Public Internet'
+  network:
+    latency_mean_s: 0.4
+    latency_std_s: 0.2
+    packet_loss: 0.1
+    retries: 2
+  timeouts:
+    queue_timeout_s: 12.0
+    e2e_timeout_s: 15.0
+  degradation:
+    enabled: true
+    threshold_tps: 25.0
+    latency_alpha: 0.75
+    loss_alpha: 1.5
+    max_loss: 0.35
+  switch:
+    redis_mean_s: 0.002
+    redis_std_s: 0.0005
+    postgres_mean_s: 0.005
+    postgres_std_s: 0.001
+- key: S2_PRIVATE
+  name: 'S2: Private APN (Atheer)'
+  network:
+    latency_mean_s: 0.06
+    latency_std_s: 0.015
+    packet_loss: 0.001
+    retries: 0
+  timeouts:
+    queue_timeout_s: 4.0
+    e2e_timeout_s: 5.0
+  degradation:
+    enabled: false
+  switch:
+    redis_mean_s: 0.002
+    redis_std_s: 0.0005
+    postgres_mean_s: 0.005
+    postgres_std_s: 0.001
+- key: S3_PRIVATE_DEGR
+  name: 'S3: Private APN (with degr.)'
+  network:
+    latency_mean_s: 0.06
+    latency_std_s: 0.015
+    packet_loss: 0.001
+    retries: 2
+  timeouts:
+    queue_timeout_s: 4.0
+    e2e_timeout_s: 5.0
+  degradation:
+    enabled: true
+    threshold_tps: 25.0
+    latency_alpha: 0.75
+    loss_alpha: 1.5
+    max_loss: 0.35
+  switch:
+    redis_mean_s: 0.002
+    redis_std_s: 0.0005
+    postgres_mean_s: 0.005
+    postgres_std_s: 0.001
