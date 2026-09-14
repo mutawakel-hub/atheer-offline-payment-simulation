@@ -6,11 +6,14 @@ authors:
   - family-names: "Al-Mutawakel"
     given-names: "Ahmed Ali Mohammed Hasan"
 repository-code: "https://github.com/mutawakel-hub/atheer-offline-payment-simulation"
-url: "https://doi.org/10.5281/zenodo.19383900"
+url: "https://doi.org/10.5281/zenodo.22754834"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.19383900
+    value: 10.5281/zenodo.22754834
     description: "Zenodo Concept DOI (resolves to the latest version)"
+  - type: doi
+    value: 10.5281/zenodo.22754835
+    description: "Zenodo Version DOI (this release, v3.0.0)"
 version: "v3.0.0"
 date-released: "2026-09-13"
 license: "MIT"
